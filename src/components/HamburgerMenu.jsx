@@ -13,7 +13,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import categories from "../data/categories";
 import { createTheme, ThemeProvider } from "@mui/material";
-export default function SwipeableTemporaryDrawer() {
+export default function SwipeableTemporaryDrawer({ setCategory }) {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -50,10 +50,10 @@ export default function SwipeableTemporaryDrawer() {
       <List>
         {categories.map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+            <ListItemButton
+              style={{ height: 40, borderRadius: 3 }}
+              onClick={() => setCategory(text)}
+            >
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

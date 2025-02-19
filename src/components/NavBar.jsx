@@ -2,11 +2,11 @@ import React from "react";
 import "./NavBar.css";
 import HamburgerMenu from "./HamburgerMenu";
 
-const NavBar = () => {
+const NavBar = ({ setCategory }) => {
   return (
     <div className="header-main-div">
       <div className="menu-icon-container">
-        <HamburgerMenu />
+        <HamburgerMenu setCategory={setCategory} />
       </div>
 
       <img
