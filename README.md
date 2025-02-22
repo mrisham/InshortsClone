@@ -60,6 +60,8 @@ npm run dev
 
 _For reference, screenshots of the UI have been added to the repository._
 
+- src/images
+
 ---
 
 ## 💡 How It Works
