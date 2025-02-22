@@ -10,19 +10,23 @@ const App = () => {
   const [newsArray, setNewsArray] = useState([]);
   const [newsResults, setNewsResults] = useState(0);
   const [loadMore, setLoadMore] = useState(10);
+  const [loading, setLoading] = useState(true);
   const getNews = async () => {
     try {
+      setLoading(true);
       const proxyUrl = "https://cors-anywhere.herokuapp.com/";
       const apiUrl = "https://newsapi.org/v2/top-headlines";
       const url = `${proxyUrl}${apiUrl}?country=us&apiKey=${API_KEY}&category=${category}&pageSize=${loadMore}`;
       const res = await axios.get(url);
-      console.log(res);
+      // console.log(res);
       setNewsArray(res.data.articles);
       setNewsResults(res.data.totalResults);
-      console.log(newsArray);
-      console.log(newsResults);
+      // console.log(newsArray);
+      // console.log(newsResults);
     } catch (e) {
       console.log("Error", e);
+    } finally {
+      setLoading(false);
     }
   };
   useEffect(() => {
@@ -36,6 +40,7 @@ const App = () => {
         newsArray={newsArray}
         loadMore={loadMore}
         setLoadMore={setLoadMore}
+        loading={loading}
       />
       <Footer />
     </div>

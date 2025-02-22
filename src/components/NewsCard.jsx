@@ -33,27 +33,29 @@ const NewsCard = ({ newsItem }) => {
         className="newsImg"
       />
       <div className="newsText">
-        <div>
-          <span className="newsTitle">{newsItem.title}</span> <br />
-          <span className="author">
-            <a href={newsItem.url} target="__blank">
-              <b>short </b>
-            </a>
-            <span className="muted">
-              {" "}
-              by {newsItem?.author ? newsItem.author : "unknown"}/{" "}
-              {formattedDate}
-            </span>
+        <span className="newsTitle">{newsItem.title}</span> <br />
+        <span className="author">
+          <a href={newsItem.url} target="__blank">
+            <b>short </b>
+          </a>
+          <span className="muted">
+            {" "}
+            by {newsItem?.author ? newsItem.author : "unknown"}/ {formattedDate}
           </span>
-          <div className="newsDescription-lower">
-            <div className="newsDescription">{newsItem.description}</div>
-            <span className="read-more">
-              read more at{" "}
-              <a href={newsItem.url} target="__blank" className="source">
-                <b>{newsItem.source.name}</b>
-              </a>
-            </span>
+        </span>
+        <div className="newsDescription-lower">
+          <div className="newsDescription">
+            {" "}
+            {newsItem.description
+              ? newsItem.description
+              : "No description available."}
           </div>
+          <span className="read-more">
+            read more at{" "}
+            <a href={newsItem.url} target="__blank" className="source">
+              <b>{newsItem.source.name}</b>
+            </a>
+          </span>
         </div>
       </div>
     </div>

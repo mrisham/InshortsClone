@@ -5,3 +5,12 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+.content {
+  flex: 1; /* Pushes the footer down */
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height to keep the footer hidden */
+}

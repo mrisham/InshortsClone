@@ -16,8 +16,14 @@ const Footer = () => {
       <div className="foot-col-2">
         <p>© 2025 Mridul Shukla. All rights reserved.</p>
         <nav>
-          <a href="#about">About Us</a> | <a href="#privacy">Privacy Policy</a>{" "}
-          | <a href="#contact">Contact</a>
+          <a
+            href="https://www.linkedin.com/in/mridulshukla01/"
+            rel="noopener noreferrer"
+          >
+            About Us
+          </a>{" "}
+          | <a href="#privacy">Privacy Policy</a> |{" "}
+          <a href="#contact">Contact</a>
         </nav>
       </div>
       <div className="foot-col-3">
@@ -28,7 +34,12 @@ const Footer = () => {
           <a href="#twitter" aria-label="Twitter">
             <FaTwitter />
           </a>
-          <a href="#linkedin" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/mridulshukla01/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <FaLinkedin />
           </a>
           <a href="#instagram" aria-label="Instagram">
