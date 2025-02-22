@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import NewsContent from "./components/NewsContent";
+import "./App.css";
 import { API_KEY } from "./data/config";
 import axios from "axios";
 import Footer from "./components/Footer";
@@ -10,7 +11,7 @@ const App = () => {
   const [newsResults, setNewsResults] = useState(0);
   const getNews = async () => {
     try {
-      const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}&category=${category}`;
+      const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}&category=${category}`;
       const res = await axios.get(url);
       console.log(res);
       setNewsArray(res.data.articles);
@@ -27,7 +28,7 @@ const App = () => {
   return (
     <div>
       <NavBar setCategory={setCategory} />
-      <NewsContent />
+      <NewsContent newsResults={newsResults} newsArray={newsArray} />
       <Footer />
     </div>
   );

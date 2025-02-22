@@ -1,7 +1,8 @@
 import React from "react";
 import "./NewsContent.css";
 import { Container } from "@mui/material";
-const NewsContent = () => {
+import NewsCard from "./NewsCard";
+const NewsContent = ({ newsArray, newsResults }) => {
   return (
     <div>
       <Container maxWidth="md">
@@ -21,6 +22,9 @@ const NewsContent = () => {
               height="80%"
             />
           </div>
+          {newsArray.map((newsItem) => (
+            <NewsCard newsItem={newsItem} key={newsItem.title} />
+          ))}
         </div>
       </Container>
     </div>
