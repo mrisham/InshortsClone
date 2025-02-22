@@ -2,7 +2,7 @@ import React from "react";
 import "./NewsContent.css";
 import { Container } from "@mui/material";
 import NewsCard from "./NewsCard";
-const NewsContent = ({ newsArray, newsResults }) => {
+const NewsContent = ({ newsArray, newsResults, setLoadMore, loadMore }) => {
   return (
     <div>
       <Container maxWidth="md">
@@ -25,6 +25,14 @@ const NewsContent = ({ newsArray, newsResults }) => {
           {newsArray.map((newsItem) => (
             <NewsCard newsItem={newsItem} key={newsItem.title} />
           ))}
+          {loadMore <= newsResults && (
+            <button
+              className="loadMore"
+              onClick={() => setLoadMore(loadMore + 10)}
+            >
+              Load More
+            </button>
+          )}
         </div>
       </Container>
     </div>
