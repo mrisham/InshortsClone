@@ -60,10 +60,9 @@ npm run dev
 
 _For reference, screenshots of the UI have been added to the repository._
 
-- src/images
-  ![alt text](<src/images/Screenshot 2025-02-22 160144.png>)
-  ![alt text](<src/images/Screenshot 2025-02-22 160408.png>)
-  ![alt text](<src/images/Screenshot 2025-02-22 160424.png>)
+![alt text](<src/images/Screenshot 2025-02-22 160144.png>)
+![alt text](<src/images/Screenshot 2025-02-22 160408.png>)
+![alt text](<src/images/Screenshot 2025-02-22 160424.png>)
 
 ---
 
