@@ -1,7 +1,26 @@
 import React from "react";
 import "./NewsCard.css";
 const NewsCard = ({ newsItem }) => {
-  console.log(newsItem);
+  //   console.log(newsItem);
+  if (!newsItem?.publishedAt) return null;
+  // Convert ISO date string to Date object
+  const dateObj = new Date(newsItem.publishedAt);
+
+  // Extract components
+  let hours = dateObj.getHours();
+  const minutes = dateObj.getMinutes().toString().padStart(2, "0");
+  const amPm = hours >= 12 ? "pm" : "am";
+  if (hours > 12) hours -= 12;
+  if (hours === 0) hours = 12;
+
+  // Extract day, date, month, and year
+  const day = dateObj.toLocaleString("en-US", { weekday: "long" });
+  const dayNum = dateObj.getDate();
+  const month = dateObj.toLocaleString("en-US", { month: "long" });
+  const year = dateObj.getFullYear();
+
+  // Final formatted date string
+  const formattedDate = `${hours}:${minutes} ${amPm} on ${day} ${dayNum} ${month}, ${year}`;
   return (
     <div className="newsCard">
       <img
@@ -22,7 +41,8 @@ const NewsCard = ({ newsItem }) => {
             </a>
             <span className="muted">
               {" "}
-              by {newsItem?.author ? newsItem.author : "unknown"}/
+              by {newsItem?.author ? newsItem.author : "unknown"}/{" "}
+              {formattedDate}
             </span>
           </span>
           <div className="newsDescription-lower">
