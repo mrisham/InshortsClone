@@ -22,8 +22,7 @@ const App = () => {
       setNewsArray(res.data.articles);
       setNewsResults(res.data.totalResults);
       // console.log(newsArray);
-      // console.log(newsResults);
-      console.log("API Key from Vite:", import.meta.env.VITE_API_KEY);
+      // console.log(newsResults
     } catch (e) {
       console.log("Error", e);
     } finally {
