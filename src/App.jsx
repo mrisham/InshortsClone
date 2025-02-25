@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import NewsContent from "./components/NewsContent";
 import "./App.css";
-import { API_KEY } from "./data/config";
+
 import axios from "axios";
 import Footer from "./components/Footer";
 const App = () => {
@@ -14,8 +14,8 @@ const App = () => {
   const getNews = async () => {
     try {
       setLoading(true);
-      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-      const apiUrl = "https://newsapi.org/v2/top-headlines";
+      // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      const API_KEY = import.meta.env.VITE_API_KEY;
       const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}&category=${category}&pageSize=${loadMore}`;
       const res = await axios.get(url);
       // console.log(res);
